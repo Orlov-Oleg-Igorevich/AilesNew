@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link href= "{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="{% url 'main-page' %}">Home</a>
+        <a href="{% url 'News' %}">News</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'about' %}">About</a>
+
+        <right>
+            <a href="{% url 'signup' %}" class="gradient-button">Sign up</a>
+        </right>
+
+    </div>
+{% block body %} {% endblock %}
+</body>
+</html>

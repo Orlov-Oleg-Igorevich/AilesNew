@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Главная страница{% endblock %}
+
+
+<style>
+</style>
+{% block body %}
+    <p> &nbsp; </p>
+    <div style="border: 1px solid #aaa; box-shadow: 5px 5px 2px 2px violet; display: inline-block; padding: 10px;">
+        <img align="left"
+        src="{% static 'img/logo.jpeg' %}"
+        alt=""
+        width="100"
+        height="100" />
+        <p> By on the line </p>
+    </div>
+    <CENTER>
+        <h1>Ailes</h1>
+    </CENTER>
+    <img align="right"
+        src="{% static 'img/oi.jpeg' %}"
+        alt=""
+        width="800"
+        height="800" />
+    <div style="border: 1px solid #aaa; box-shadow: 5px 5px 2px 2px blue; display: inline-block;  width: 400px;
+    height: 200px; padding: 10px;">
+        <p align="right">Жизнь слишком коротка, чтобы притворятья кем-то другим
+        <br>Делись, люби, живи!
+    </div>
+    <p> &nbsp; </p>
+    <div style="border: 1px solid #aaa; box-shadow: 5px 5px 2px 2px white; display: inline-block;  width: 600px;
+    height: 600px; padding: 10px;">
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Недавние обновления:</h2>
+        <ul> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li>Общайся с друзьями в чате</li>
+            <li>Обменивайся любимыми локациями</li>
+            <li>Исследуй вместе с нами</li>
+        </ul>
+    </div>
+{% endblock %}
