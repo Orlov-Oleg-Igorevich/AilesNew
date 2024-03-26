@@ -1,13 +1,12 @@
 from django.db import models
 from django.urls import reverse
 
-
 class Accounts(models.Model):
     login = models.BinaryField()
     password = models.BinaryField()
+    ctr = models.BinaryField()
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-
 
 class PersonInfo(models.Model):
     firstname = models.CharField(max_length=100)
@@ -17,16 +16,10 @@ class PersonInfo(models.Model):
     date_of_birth = models.DateField()
     time_update = models.DateTimeField(auto_now=True)
     slug = models.SlugField(unique=True, db_index=True, max_length=255)
+    acc = models.OneToOneField(on_delete=models.CASCADE, related_name='accounts')
 
     def get_absolute_url(self):
         return reverse('page', kwargs = {'post_slug': self.slug})
 
     def __str__(self):
         return self.firstname + self.lastname
-
-class Category(models.Model):
-    name = models.CharField(max_length=20)
-    slug = models.SlugField(unique=True, db_index=True, max_length=255)
-
-    def __str__(self):
-        return self.name
