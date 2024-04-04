@@ -5,6 +5,9 @@ from .models import PersonInfo
 def index(request):
     return render(request, "Social_networks/index.html")
 
+def action_page(request):
+    return render(request, "Social_networks/signup.html")
+
 def about(request):
     return render(request, "Social_networks/about.html")
 

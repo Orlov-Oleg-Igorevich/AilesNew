@@ -2,9 +2,8 @@ from django.db import models
 from django.urls import reverse
 
 class Accounts(models.Model):
-    login = models.BinaryField()
-    password = models.BinaryField()
-    ctr = models.BinaryField()
+    login = models.CharField(unique=True, max_length=60, db_index=True)
+    password = models.CharField(max_length=50)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
 
@@ -16,7 +15,8 @@ class PersonInfo(models.Model):
     date_of_birth = models.DateField()
     time_update = models.DateTimeField(auto_now=True)
     slug = models.SlugField(unique=True, db_index=True, max_length=255)
-    acc = models.OneToOneField(on_delete=models.CASCADE, related_name='accounts')
+    photo = models.ImageField(width_field=1920, height_field=1080, blank=True)
+    acc = models.OneToOneField('Accounts', on_delete=models.CASCADE, related_name='accounts')
 
     def get_absolute_url(self):
         return reverse('page', kwargs = {'post_slug': self.slug})
