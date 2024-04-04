@@ -1,0 +1,57 @@
+
+
+
+/* Выдвижное меню*/
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.menu {
+  position: fixed;
+  left: 0;top: 0;
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(47, 182, 223);
+  transition: 0.5s;
+  transform: translateX(-100%);
+}
+
+.menu_active {
+  transform: translateX(0%);
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+  flex-direction: column;
+}
+ 
+.menu-list a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900; 
+}
+
+.menu-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  position:absolute;
+  right: -33px;
+  top: 10px;
+
+}

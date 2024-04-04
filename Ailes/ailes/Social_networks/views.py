@@ -20,11 +20,15 @@ def News(request):
 def signup(request):
     return render(request, "Social_networks/signup.html")
 
+
 def show_user(request, user_slug):
-    user = get_object_or_404(PersonInfo, slug=user_slug)
-
+    user_info = get_object_or_404(PersonInfo, slug=user_slug)
     data = {
-
+        'user': user_info,
     }
+    return render(request, "Social_networks/Profile.html", data)
 
-    return render(request, "Social_networks/signup.html", data)
+
+def user_friends(request, user_slug):
+    return render(request, 'Social_networks/Друзья.html')
+
